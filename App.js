@@ -1,32 +1,30 @@
 import { setStatusBarTranslucent, StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {SafeAreaView, Image, Text,TextInput, Button, StyleSheet, View, Alert } from 'react-native';
-import Input from './Input';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+import MainScreen from './Input';
+import DetailScreen from './Detail';
+
+const Stack = createStackNavigator();
 
 export default class App extends React.Component {
   render() {
     return (
-    // 검색한 도시를 API 통해서 정보를 뽑아오기  (textbox 클릭 이벤트)
-                    // 날짜별 시간별 기온 습도
-    // 이미지들 , css
-      <SafeAreaView style={styles.fullscreen}>
-              <View style={styles.container}>
-                 <Input style={{ width: 1, borderColor: 'gray', borderWidth: 1}}/>
-                  <Text> 도시 props 는 Input.state.text 입니다
-                  </Text>
-
-                  <StatusBar style="auto"/>
-              </View>
-                  <Text> 여백
-                  </Text>
-              <View style={styles.container}>
-                  <Text> 날씨 결과를 나타낼 구간입니다.
-                  </Text>
-                  <StatusBar style="auto"/>
-
-              </View>
-      </SafeAreaView>
-
+      <NavigationContainer>
+            <Stack.Navigator initialRouteName="MAIN">
+              <Stack.Screen name="MAIN" component={MainScreen}
+                options={{
+                  title: '도시 검색'
+              }}/>
+              <Stack.Screen name="DETAIL" component={DetailScreen}
+                options={{
+                  title: '상세 정보'
+              }}/>
+            </Stack.Navigator>
+          </NavigationContainer>
     );
   }
 }
@@ -36,6 +34,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   Search:{
+    backgroundColor : 'black',
+    alignItems : 'left',
+    justifyContent : 'center'
 
   },
   Result:{
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin : 30,
-    backgroundColor: '#fff',
     backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
