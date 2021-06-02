@@ -11,13 +11,7 @@ export default class DetailScreen extends Component {
         const moment = require('moment');
 
         this.state = {
-            weatherData : [], // Test
-            weather_P6h : [], // 6시간 전
-            weather_P3h : [], // 3시간 전
-            weather_N0h : [], // 현재
-            weather_F3h : [], // 3시간 후
-            weather_F6h : [], // 6시간 후
-            weather_F9h : [], // 9시간 후
+            weatherData : [], // -6 ~ + 9 data set
         }
     }
 
@@ -28,12 +22,6 @@ export default class DetailScreen extends Component {
         console.log(responseJson)
             this.setState({
                   weatherData : [].concat(responseJson.list[0],responseJson.list[1],responseJson.list[2],responseJson.list[3],responseJson.list[4],responseJson.list[5]),
-                  weather_P6h : (responseJson.list[0]),
-                  weather_P3h : (responseJson.list[1]),
-                  weather_N0h : (responseJson.list[2]),
-                  weather_F3h : (responseJson.list[3]),
-                  weather_F6h : (responseJson.list[4]),
-                  weather_F9h : (responseJson.list[5]),
                 test : true, // 호출이 되면 true로
             });
             console.log(this.state); // 테스트용 출력
