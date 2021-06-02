@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import {SafeAreaView, StatusBar, ScrollView, Button,View, Text, StyleSheet } from 'react-native';
-import moment from 'moment'
+import {FlatList,SafeAreaView, StatusBar, ScrollView, Button,View, Text, StyleSheet } from 'react-native';
+import moment from 'moment';
+import Show from './show';
+
+
+
 export default class DetailScreen extends Component {
     constructor(props){
         super(props);
         const moment = require('moment');
 
         this.state = {
+            weatherData : [], // Test
             weather_P6h : [], // 6시간 전
             weather_P3h : [], // 3시간 전
             weather_N0h : [], // 현재
@@ -22,6 +27,7 @@ export default class DetailScreen extends Component {
         .then( (responseJson) => {
         console.log(responseJson)
             this.setState({
+                  weatherData : [].concat(responseJson.list[0],responseJson.list[1],responseJson.list[2],responseJson.list[3],responseJson.list[4],responseJson.list[5]),
                   weather_P6h : (responseJson.list[0]),
                   weather_P3h : (responseJson.list[1]),
                   weather_N0h : (responseJson.list[2]),
@@ -37,111 +43,51 @@ export default class DetailScreen extends Component {
         });
     }
 
-  render() {
-            if(!this.state.test){
-                this.componentMount();
-            }
-            if(!this.state.test){ // 도시 호출 실패
-                return (
-                    <View>
-                        <Text style={{fontSize:30}}>How is the Weather today</Text>
-                        <Text>검색한 도시</Text>
-                        <Text style={{fontSize:30, backgroundColor: '#aaaaaa', borderRadius: 5, padding:5, margin:5}}>
-                        {this.props.route.params.text}
-                        </Text>
-                        <Text> ! Error 해당 도시 없음</Text>
-                    </View>
+
+    Weather({item}){
+        return(
+            <View style = {styles.weatherbox}>
+                <Text style={styles.text}>
+                {moment(item.dt_txt).format("HHmm")}
+                {"\n"}
+                {(item.main.temp - 273).toFixed(1)} 'C
+                {"\n"}
+                {(item.main.humidity)} %
+                </Text>
+            </View>
+        );
+    }
+    render(){
+        if(!this.state.test) this.componentMount();
+        if(!this.state.test) { // 도시 검색 실패
+               return(
+                <Text>!ERROR</Text>
+               );
+        }
+        else{ // 도시 검색 성공
+                return(
+
+                   <SafeAreaView style = {styles.fullscreen}>
+                        <View>
+                             <Text style={{fontSize:30}}>How is the Weather today</Text>
+                             <Text>검색한 도시</Text>
+                             <Text style={{fontSize:30, backgroundColor: '#aaaaaa', borderRadius: 5, padding:5, margin:5}}>
+                             {this.props.route.params.text}
+                             </Text>
+                            <StatusBar style="auto"/>
+                        </View>
+                        <ScrollView>
+                            {this.state.weatherData.map( (item,index) => // DATA 에 들어있는 컴포넌트 반복 실행
+                                <this.Weather key={index} item = {item}/> // Call Weather(item)
+                            )}
+                        </ScrollView>
+                   </SafeAreaView>
+
                 );
-
-            }
-            else{ // 도시 호출 성공
-                return (
-                                <SafeAreaView style = {styles.fullscreen}>
-                                      <View>
-                                        <Text style={{fontSize:30}}>How is the Weather today</Text>
-                                        <Text>검색한 도시</Text>
-                                        <Text style={{fontSize:30, backgroundColor: '#aaaaaa', borderRadius: 5, padding:5, margin:5}}>
-                                        {this.props.route.params.text}
-                                        </Text>
-                                        <StatusBar style="auto"/>
-                                      </View>
-                                    <ScrollView>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_P6h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_P6h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_P6h.main.humidity) }%
-                                           </Text>
-
-                                           <StatusBar style="auto"/>
-                                      </View>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_P3h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_P3h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_P3h.main.humidity) }%
-                                           </Text>
-                                                             <StatusBar style="auto"/>
-
-                                      </View>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_N0h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_N0h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_N0h.main.humidity) }%
-                                           </Text>
-                                                             <StatusBar style="auto"/>
-
-                                      </View>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_F3h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_F3h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_F6h.main.humidity) }%
-                                           </Text>
-                                                             <StatusBar style="auto"/>
-
-                                      </View>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_F6h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_F6h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_F6h.main.humidity) }%
-                                           </Text>
-                                                             <StatusBar style="auto"/>
-
-                                      </View>
-                                      <View style = {styles.weatherbox}>
-                                           <Text>
-                                           {moment(this.state.weather_F9h.dt_txt).format("HHmm")}
-                                           {"\n"}
-                                           {(this.state.weather_F9h.main.temp - 273).toFixed(1)}
-                                           {"\n"}
-                                           {(this.state.weather_F9h.main.humidity) }%
-                                           </Text>
-                                                             <StatusBar style="auto"/>
-
-                                      </View>
-                                      </ScrollView>
-                                </SafeAreaView>
-
-
-                            );
-
-            }
-
+        }
 
     }
+
 }
 
 const styles = StyleSheet.create({
@@ -153,6 +99,8 @@ const styles = StyleSheet.create({
     height:100,
     flex:1,
     padding : 5,
+    borderWidth : 1,
+    borderRadius : 3,
     lineHeight: 30,
 
   },
