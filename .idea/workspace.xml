@@ -14,14 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29fe471-e53a-4e9c-94ed-b2efd8748fec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native/Libraries/Animated/release/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native/ReactAndroid/src/main/jni/first-party/fbjni/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native/ReactCommon/hermes/inspector/tools/msggen/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -65,6 +60,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="290" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622270470621">
@@ -79,9 +75,10 @@
       <screen x="0" y="25" width="1440" height="800" />
     </state>
     <state x="347" y="171" width="957" height="571" key="AVDManager/0.25.1440.800@0.25.1440.800" timestamp="1622270817501" />
-    <state x="490" y="149" width="670" height="676" key="search.everywhere.popup" timestamp="1622270477735">
-      <screen x="0" y="25" width="1440" height="800" />
+    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup" timestamp="1622626240459">
+      <screen x="0" y="25" width="1440" height="797" />
     </state>
-    <state x="490" y="149" width="670" height="676" key="search.everywhere.popup/0.25.1440.800@0.25.1440.800" timestamp="1622270477735" />
+    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup/0.25.1440.797@0.25.1440.797" timestamp="1622626240459" />
+    <state x="490" y="149" width="670" height="676" key="search.everywhere.popup/0.25.1440.800@0.25.1440.800" timestamp="1622277103593" />
   </component>
 </project>
