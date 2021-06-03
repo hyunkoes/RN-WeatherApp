@@ -12,6 +12,9 @@ import Rain from './weatherIcon/Rain.png';
 import Snow from './weatherIcon/Snow.png';
 import Fog from './weatherIcon/Fog.png';
 import ThunderStorm from './weatherIcon/ThunderStorm.png';
+import Strong from './weatherIcon/wind_speed_07.png';
+import Medium from './weatherIcon/wind_speed_03.png';
+import Weak from './weatherIcon/wind_speed_02.png';
 
 
 
@@ -89,6 +92,7 @@ export default class DetailScreen extends Component {
                                                <img src={ThunderStorm} width = '80' height = '80'/>
                                                : <img src={Fog} width = '80' height = '80'/>
                                 )}
+                        {item.weather[0].main}
                     </View>
                     <View style = {styles.iconbox}>
                         {(item.main.temp - 273) > 20 ?
@@ -102,6 +106,15 @@ export default class DetailScreen extends Component {
                         <Image style= {{height:100,width:70}}
                                source={humidity}/>
                         {(item.main.humidity)+"%"}
+                    </View>
+                    <View style = {styles.iconbox}>
+                        {(item.wind.speed > 7 ?
+                                <img src={Strong} width = '80' height = '80'/>
+                                : item.wind.speed > 4 ?
+                                    <img src={Medium} width = '80' height = '80'/>
+                                    : <img src={Weak} width = '80' height = '80'/>
+                        )}
+                        {(item.wind.speed) + "m/s"}
                     </View>
                 </View>
             </View>
