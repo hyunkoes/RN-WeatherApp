@@ -89,6 +89,7 @@ export default class DetailScreen extends Component {
                                                <img src={ThunderStorm} width = '80' height = '80'/>
                                                : <img src={Fog} width = '80' height = '80'/>
                                 )}
+                        {item.weather[0].main}
                     </View>
                     <View style = {styles.iconbox}>
                         {(item.main.temp - 273) > 20 ?
