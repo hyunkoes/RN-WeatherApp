@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
   },
   Search:{
     backgroundColor : 'black',
-    alignItems : 'left',
     justifyContent : 'center'
 
   },
@@ -46,7 +45,6 @@ const styles = StyleSheet.create({
     flex: 1,
     margin : 30,
     backgroundColor: 'blue',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   text:{
@@ -56,7 +54,6 @@ const styles = StyleSheet.create({
     width : 300,
     borderColor: 'black',
     borderWidth:10,
-    alignItems:'center',
     backgroundColor:'red',
     margin:5
   }
