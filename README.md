@@ -15,7 +15,8 @@
 
 [구현 ]
 
-![KakaoTalk_Video_2021-06-04-15-32-22](https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif)
+<img src="(https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif)" width="500" height="1000">
+
 
 
 
