@@ -4,11 +4,11 @@
  - 기온이 오전에 높게 나오는데 api 자체 데이터가 잘못되어 있는 것 같음.
 
 
-Time : api dt_txt
-main : api weather[0].main
-'C temp : api temp - 273.15    ( 20도 보다 높으면 붉은 온도계, 낮으면 푸른 온도계 )
-humidity : api humidity
-wind : api wind
+ - Time : api dt_txt\n
+ - main : api weather[0].main
+ - 'C temp : api temp - 273.15    ( 20도 보다 높으면 붉은 온도계, 낮으면 푸른 온도계 )
+ - humidity : api humidity
+ - wind : api wind
 
 
 
@@ -21,6 +21,6 @@ wind : api wind
 
 
 
-[API JSON]
+[API JSON : Daejeon 2021/06/04 14:00]
 
 ![image](https://user-images.githubusercontent.com/73640793/120752521-d19b5c80-c544-11eb-92c6-3eec06ec91e5.png)
