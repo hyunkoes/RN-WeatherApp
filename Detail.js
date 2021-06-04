@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import {FlatList,SafeAreaView, StatusBar, ScrollView, Image,View, Text, StyleSheet } from 'react-native';
 import moment from 'moment';
-import Show from './show';
-import Clear from './weatherIcon/Clear.png'
+
 import humidity from './weatherIcon/humidity.jpg';
 import temp_1 from './weatherIcon/temp_10.jpg';
 import temp_2 from './weatherIcon/temp_20.jpg';
+
+import Clouds from './weatherIcon/Clouds.png';
+import Clear from './weatherIcon/Clear.png';
+import Rain from './weatherIcon/Rain.png';
+import Snow from './weatherIcon/Snow.png';
+import Fog from './weatherIcon/Fog.png';
+import ThunderStorm from './weatherIcon/ThunderStorm.png';
+import Strong from './weatherIcon/wind_speed_07.png';
+import Medium from './weatherIcon/wind_speed_03.png';
+import Weak from './weatherIcon/wind_speed_02.png';
+
+
 
 export default class DetailScreen extends Component {
     constructor(props){
@@ -65,7 +76,24 @@ export default class DetailScreen extends Component {
             <View>
                 <Text>{moment(item.dt_txt).format("HH")}시 </Text>
                 <View style = {styles.weatherbox}>
-                    <img src={Clear} width = '80'  height = '80'/>
+
+                    <View style = {styles.iconbox}>
+                        {(item.weather[0].main == "Clouds" ?
+                            <img src={Clouds} width = '80' height = '80'/>
+                            : item.weather[0].main == "Snow" ?
+                                <img src={Snow} width = '80' height = '80'/>
+                                : item.weather[0].main == "Clear" ?
+                                    <img src={Clear} width = '80' height = '80'/>
+                                    : item.weather[0].main == "Rain" ?
+                                        <img src={Rain} width = '80' height = '80'/>
+                                        : item.weather[0].main == "Drizzle" ?
+                                            <img src={Rain} width = '80' height = '80'/>
+                                            : item.weather[0].main == "ThunderStorm" ?
+                                               <img src={ThunderStorm} width = '80' height = '80'/>
+                                               : <img src={Fog} width = '80' height = '80'/>
+                                )}
+                        {item.weather[0].main}
+                    </View>
                     <View style = {styles.iconbox}>
                         {(item.main.temp - 273) > 20 ?
                             <Image  style={{height:100,width:50}}
@@ -79,12 +107,21 @@ export default class DetailScreen extends Component {
                                source={humidity}/>
                         {(item.main.humidity)+"%"}
                     </View>
+                    <View style = {styles.iconbox}>
+                        {(item.wind.speed > 7 ?
+                                <img src={Strong} width = '80' height = '80'/>
+                                : item.wind.speed > 4 ?
+                                    <img src={Medium} width = '80' height = '80'/>
+                                    : <img src={Weak} width = '80' height = '80'/>
+                        )}
+                        {(item.wind.speed) + "m/s"}
+                    </View>
                 </View>
             </View>
         );
     }
     render(){
-        if(!this.state.load) {this.componentMount()}
+        if(!this.state.load) {this.componentMount();}
         if(!this.state.test && this.state.load) { return (<this.ErrorView/>);}
         else{ // 도시 검색 성공
             console.log('render start')
