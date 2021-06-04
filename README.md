@@ -15,7 +15,7 @@
 
 [구현 ]
 
-<img src="https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif" width="200" >
+<img src="https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif" width="300" >
 
 
 
