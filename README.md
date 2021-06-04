@@ -4,7 +4,7 @@
  - Api 제공하는 현지의 시각과 시차를 고려하였음.
 
 
- - Time : api dt_txt\n
+ - Time : api dt_txt
  - main : api weather[0].main
  - 'C temp : api temp - 273.15    ( 20도 보다 높으면 붉은 온도계, 낮으면 푸른 온도계 )
  - humidity : api humidity
