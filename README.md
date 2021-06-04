@@ -10,11 +10,17 @@ main : api weather[0].main
 humidity : api humidity
 wind : api wind
 
-![image](https://user-images.githubusercontent.com/73640793/120752521-d19b5c80-c544-11eb-92c6-3eec06ec91e5.png)
 
 
 
 [구현 ]
 
-https://user-images.githubusercontent.com/73640793/120753486-32776480-c546-11eb-851f-978bc1eb1041.mp4
 
+
+![KakaoTalk_Video_2021-06-04-15-09-38](https://user-images.githubusercontent.com/73640793/120754048-10caad00-c547-11eb-9b74-b007f271f3f0.gif)
+
+
+
+[API JSON]
+
+![image](https://user-images.githubusercontent.com/73640793/120752521-d19b5c80-c544-11eb-92c6-3eec06ec91e5.png)
