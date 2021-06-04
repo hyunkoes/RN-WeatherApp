@@ -32,18 +32,16 @@ export default class DetailScreen extends Component {
     }
 
     componentMount(){
-        return fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ this.props.route.params.text+"&appid=e5ea91bc97a4a071bfb4d4d27fe05ae1")
+        this.setState({load:true})
+         return fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ this.props.route.params.text+"&appid=e393afccd2e728fd351d0f4666c3c411")
             .then( (response) => response.json() )
             .then( (responseJson) => {
                 this.setState({
                     weatherData : [].concat(responseJson.list[0],responseJson.list[1],responseJson.list[2],responseJson.list[3],responseJson.list[4],responseJson.list[5]),
                     test : true, // 호출이 되면 true로
-                    load : true,
                 });
-//            console.log(this.state); // 테스트용 출력
             })
             .catch((error) => {
-                this.ErrorView()
                 console.log(error)
             });
     }
@@ -56,21 +54,6 @@ export default class DetailScreen extends Component {
         );
     }
 
-
-    WeatherMainImage({weather}){
-
-        if (weather == 'Clouds'){
-            return(
-                <Text>구름구름</Text>
-            );
-        }
-        else{
-            return(
-                <img src={Clear} width='50' height='50'/>
-            );
-        }
-
-    }
     Weather({item}){   // 날씨별 이미지 , 기온 ( 최고, 최저 ) , 습도 까지만 일단 출력
         return(
             <View>
@@ -79,52 +62,57 @@ export default class DetailScreen extends Component {
 
                     <View style = {styles.iconbox}>
                         {(item.weather[0].main == "Clouds" ?
-                            <img src={Clouds} width = '80' height = '80'/>
+                            <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/Clouds.png')} />
                             : item.weather[0].main == "Snow" ?
-                                <img src={Snow} width = '80' height = '80'/>
+                                <Image style= {{height:100,width:100}}   resizeMode = "contain" source={require('./weatherIcon/Snow.png')}/>
                                 : item.weather[0].main == "Clear" ?
-                                    <img src={Clear} width = '80' height = '80'/>
+                                    <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/Clear.png')} />
                                     : item.weather[0].main == "Rain" ?
-                                        <img src={Rain} width = '80' height = '80'/>
+                                        <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/Rain.png')} />
                                         : item.weather[0].main == "Drizzle" ?
-                                            <img src={Rain} width = '80' height = '80'/>
+                                            <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/Rain.png')} />
                                             : item.weather[0].main == "ThunderStorm" ?
-                                               <img src={ThunderStorm} width = '80' height = '80'/>
-                                               : <img src={Fog} width = '80' height = '80'/>
+                                               <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/ThunderStorm.png')} />
+                                               : <Image style= {{height:100,width:100}}  resizeMode = "contain"  source={require('./weatherIcon/Fog.png')} />
                                 )}
-                        {item.weather[0].main}
+                        <Text>{item.weather[0].main}</Text>
                     </View>
                     <View style = {styles.iconbox}>
-                        {(item.main.temp - 273) > 20 ?
-                            <Image  style={{height:100,width:50}}
+                        {(item.main.temp - 273.15) > 20 ?
+                            <Image  style={{height:100,width:50}}  resizeMode = "contain"
                                     source={temp_2}/> :
-                            <Image  style={{height:100,width:50}}
+                            <Image  style={{height:100,width:50}}  resizeMode = "contain"
                                     source={temp_1}/>}
-                        {(item.main.temp - 273).toFixed(1) + "'C"}
+                        <Text>{(item.main.temp - 273.15).toFixed(1) + "'C"}</Text>
                     </View>
                     <View style = {styles.iconbox}>
-                        <Image style= {{height:100,width:70}}
+                        <Image style= {{height:100,width:70}}  resizeMode = "contain"
                                source={humidity}/>
-                        {(item.main.humidity)+"%"}
+                        <Text>{(item.main.humidity)+"%"}</Text>
                     </View>
                     <View style = {styles.iconbox}>
                         {(item.wind.speed > 7 ?
-                                <img src={Strong} width = '80' height = '80'/>
+                                <Image style= {{height:100,width:100}} resizeMode = "contain" source={require('./weatherIcon/wind_speed_07.png')}/>
                                 : item.wind.speed > 4 ?
-                                    <img src={Medium} width = '80' height = '80'/>
-                                    : <img src={Weak} width = '80' height = '80'/>
+                                    <Image style= {{height:100,width:100}} resizeMode = "contain" source={require('./weatherIcon/wind_speed_03.png')} />
+                                    : <Image style= {{height:100,width:100}} resizeMode = "contain" source={require('./weatherIcon/wind_speed_02.png')} />
                         )}
-                        {(item.wind.speed) + "m/s"}
+                        <Text>{(item.wind.speed) + "m/s"}</Text>
                     </View>
                 </View>
             </View>
         );
     }
     render(){
-        if(!this.state.load) {this.componentMount();}
-        if(!this.state.test && this.state.load) { return (<this.ErrorView/>);}
+        console.log(this.state.test + ' ' + this.state.load)
+        if(!this.state.load) {
+            this.componentMount();
+            console.log('api 함수 호출 후    '+this.state.test + ' ' + this.state.load)
+            }
+        if(!this.state.test && this.state.load) {
+            console.log('ErrorView 인 상황   '+this.state.test + ' ' + this.state.load)
+            return (<this.ErrorView/>);}
         else{ // 도시 검색 성공
-            console.log('render start')
             return(
                 <SafeAreaView style = {styles.fullscreen}>
                     <View>
@@ -156,10 +144,10 @@ const styles = StyleSheet.create({
     },
 
     weatherboxcol:{
-        flexDirection : 'col',
+        flexDirection : 'column',
         flex : 1,
         justifyContent : 'space-between',
-        margin : 10,
+        margin : 100,
         alignItems:'center'
 
     },
@@ -167,20 +155,23 @@ const styles = StyleSheet.create({
         margin : 10,
         padding : 10,
         borderRadius : 15,
-        backgroundColor : 'white'
+        backgroundColor : '#c4daf4'
     },
     weatherbox: {
         flexDirection : 'row',
         margin : 10,
-        padding : 5,
+        height : 150,
+        padding : 30,
         borderWidth : 1,
         justifyContent : 'space-between',
-
-        borderRadius : 3,
+        backgroundColor : 'white',
+        borderRadius : 10,
         lineHeight: 30,
 
     },
     iconbox: {
+        width : 50,
+        height : 50,
         alignItems:'center',
     },
     Search:{

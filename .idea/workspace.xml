@@ -14,6 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29fe471-e53a-4e9c-94ed-b2efd8748fec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Detail.js" afterDir="false" />
     </list>
@@ -32,25 +33,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -60,14 +45,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622268120391</updated>
-
-      <workItem from="1622728287321" duration="224000" />
-
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -82,27 +61,28 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="290" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622270470621">
-      <screen x="0" y="25" width="1440" height="800" />
+    <state x="290" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622781803104">
+      <screen x="0" y="25" width="1440" height="797" />
     </state>
+    <state x="290" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.797@0.25.1440.797" timestamp="1622781803104" />
     <state x="290" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.800@0.25.1440.800" timestamp="1622270470621" />
     <state x="557" y="262" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622272871304">
       <screen x="0" y="25" width="1440" height="800" />
     </state>
     <state x="557" y="262" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.800@0.25.1440.800" timestamp="1622272871304" />
-    <state x="403" y="253" width="957" height="569" key="AVDManager" timestamp="1622698076375">
+    <state x="403" y="253" width="957" height="569" key="AVDManager" timestamp="1622782284626">
       <screen x="0" y="25" width="1440" height="797" />
     </state>
-    <state x="403" y="253" width="957" height="569" key="AVDManager/0.25.1440.797@0.25.1440.797" timestamp="1622698076375" />
+    <state x="403" y="253" width="957" height="569" key="AVDManager/0.25.1440.797@0.25.1440.797" timestamp="1622782284626" />
     <state x="347" y="171" width="957" height="571" key="AVDManager/0.25.1440.800@0.25.1440.800" timestamp="1622270817501" />
     <state x="229" y="25" width="597" height="797" key="find.popup" timestamp="1622627545671">
       <screen x="0" y="25" width="1440" height="797" />
     </state>
     <state x="229" y="25" width="597" height="797" key="find.popup/0.25.1440.797@0.25.1440.797" timestamp="1622627545671" />
-    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup" timestamp="1622697978693">
+    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup" timestamp="1622781814141">
       <screen x="0" y="25" width="1440" height="797" />
     </state>
-    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup/0.25.1440.797@0.25.1440.797" timestamp="1622697978693" />
+    <state x="490" y="149" width="670" height="674" key="search.everywhere.popup/0.25.1440.797@0.25.1440.797" timestamp="1622781814141" />
     <state x="490" y="149" width="670" height="676" key="search.everywhere.popup/0.25.1440.800@0.25.1440.800" timestamp="1622277103593" />
   </component>
 </project>
