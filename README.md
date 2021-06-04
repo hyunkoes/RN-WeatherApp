@@ -1,6 +1,6 @@
 # RN-WeatherApp
  - First Application
- - Api sync issue ( daejeon 을 입력하면 날씨 정보가 뜨기 전에 City not found 가 출력됨 )
+ - Api sync issue ( 없는 City를 입력하면 ErrorView가 뜨기 전에 Empty WeatherView가 출력됨 )
  - Api 제공하는 현지의 시각과 시차를 고려하였음.
 
 
