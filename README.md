@@ -4,11 +4,11 @@
  - 기온이 오전에 높게 나오는데 api 자체 데이터가 잘못되어 있는 것 같음.
 
 
-1 . Time : api dt_txt\n
-2 . main : api weather[0].main
-3 . 'C temp : api temp - 273.15    ( 20도 보다 높으면 붉은 온도계, 낮으면 푸른 온도계 )
-4 . humidity : api humidity
-5 . wind : api wind
+ - Time : api dt_txt\n
+ - main : api weather[0].main
+ - 'C temp : api temp - 273.15    ( 20도 보다 높으면 붉은 온도계, 낮으면 푸른 온도계 )
+ - humidity : api humidity
+ - wind : api wind
 
 
 
