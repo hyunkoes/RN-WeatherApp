@@ -57,7 +57,7 @@ export default class DetailScreen extends Component {
     Weather({item}){   // 날씨별 이미지 , 기온 ( 최고, 최저 ) , 습도 까지만 일단 출력
         return(
             <View>
-                <Text>{moment(item.dt_txt).format("HH")}시 </Text>
+                <Text>{(Number(moment(item.dt_txt).format("HH")) + 6)%24}시 </Text>
                 <View style = {styles.weatherbox}>
 
                     <View style = {styles.iconbox}>
