@@ -1,7 +1,7 @@
 # RN-WeatherApp
  - First Application
  - Api sync issue ( daejeon 을 입력하면 날씨 정보가 뜨기 전에 City not found 가 출력됨 )
- - 기온이 오전에 높게 나오는데 api 자체 데이터가 잘못되어 있는 것 같음.
+ - Api 제공하는 현지의 시각과 시차를 고려하였음.
 
 
  - Time : api dt_txt\n
@@ -15,9 +15,7 @@
 
 [구현 ]
 
-
-
-![KakaoTalk_Video_2021-06-04-15-09-38](https://user-images.githubusercontent.com/73640793/120754048-10caad00-c547-11eb-9b74-b007f271f3f0.gif)
+![KakaoTalk_Video_2021-06-04-15-32-22](https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif)
 
 
 
