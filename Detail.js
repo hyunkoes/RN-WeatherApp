@@ -26,13 +26,11 @@ export default class DetailScreen extends Component {
         this.state = {
             weatherData : [], // Test
             test : false,
-            load : false,
 
         }
     }
 
-    componentMount(){
-        this.setState({load:true})
+    componentDidMount(){
          return fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ this.props.route.params.text+"&appid=e393afccd2e728fd351d0f4666c3c411")
             .then( (response) => response.json() )
             .then( (responseJson) => {
@@ -104,13 +102,8 @@ export default class DetailScreen extends Component {
         );
     }
     render(){
-        console.log(this.state.test + ' ' + this.state.load)
-        if(!this.state.load) {
-            this.componentMount();
-            console.log('api 함수 호출 후    '+this.state.test + ' ' + this.state.load)
-            }
-        if(!this.state.test && this.state.load) {
-            console.log('ErrorView 인 상황   '+this.state.test + ' ' + this.state.load)
+
+        if(!this.state.test ) {
             return (<this.ErrorView/>);}
         else{ // 도시 검색 성공
             return(
