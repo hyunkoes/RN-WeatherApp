@@ -25,7 +25,7 @@ export default class DetailScreen extends Component {
 
         this.state = {
             weatherData : [], // Test
-            test : false,
+            load : true,
 
         }
     }
@@ -36,10 +36,10 @@ export default class DetailScreen extends Component {
             .then( (responseJson) => {
                 this.setState({
                     weatherData : [].concat(responseJson.list[0],responseJson.list[1],responseJson.list[2],responseJson.list[3],responseJson.list[4],responseJson.list[5]),
-                    test : true, // 호출이 되면 true로
                 });
             })
             .catch((error) => {
+                this.setState({load : false})
                 console.log(error)
             });
     }
@@ -103,7 +103,7 @@ export default class DetailScreen extends Component {
     }
     render(){
 
-        if(!this.state.test ) {
+        if(!this.state.load) {
             return (<this.ErrorView/>);}
         else{ // 도시 검색 성공
             return(
