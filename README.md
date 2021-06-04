@@ -17,10 +17,10 @@
 
 <img src="https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif" width="500" >
 
-![KakaoTalk_Video_2021-06-04-15-32-22](https://user-images.githubusercontent.com/73640793/120756480-42914300-c54a-11eb-9b82-84ebc3de18f2.gif)
 
 
 
 [API JSON : Daejeon 2021/06/04 14:00]
 
-![image](https://user-images.githubusercontent.com/73640793/120752521-d19b5c80-c544-11eb-92c6-3eec06ec91e5.png)
+<img src="https://user-images.githubusercontent.com/73640793/120752521-d19b5c80-c544-11eb-92c6-3eec06ec91e5.png" width="500" >
+
